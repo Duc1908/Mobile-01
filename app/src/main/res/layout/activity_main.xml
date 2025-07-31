@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Tên đăng nhập"
         android:inputType="textEmailAddress"
         tools:layout_editor_absoluteX="107dp"
         tools:layout_editor_absoluteY="237dp" />
@@ -21,17 +22,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Mật khẩu"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="362dp" />
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="343dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="477dp" />
+        android:text="Đăng Nhập"
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="437dp" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -40,4 +42,20 @@
         app:srcCompat="@android:drawable/ic_menu_myplaces"
         tools:layout_editor_absoluteX="163dp"
         tools:layout_editor_absoluteY="101dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quên mật khẩu"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="397dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng kí"
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="513dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
