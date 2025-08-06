@@ -6,9 +6,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:background="#FFFFFF">
 
-    <!-- Hình ổ khoá -->
+    <!-- Ảnh ổ khoá -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="120dp"
@@ -18,8 +19,7 @@
         android:contentDescription="Lock Icon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="DuplicateIds" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Email -->
     <EditText
@@ -55,15 +55,14 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginEnd="8dp"
         android:text="LOGIN"
-        android:textAllCaps="true"
         android:backgroundTint="#8000FF"
         android:textColor="#FFFFFF"
         app:layout_constraintTop_toBottomOf="@id/txtPass"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnRegister"
-        app:layout_constraintWidth_percent="0.39" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.4" />
 
     <!-- REGISTER Button -->
     <Button
@@ -71,15 +70,14 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="8dp"
         android:text="REGISTER"
-        android:textAllCaps="true"
         android:backgroundTint="#FF9800"
         android:textColor="#FFFFFF"
         app:layout_constraintTop_toBottomOf="@id/txtPass"
         app:layout_constraintStart_toEndOf="@id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.39" />
+        app:layout_constraintWidth_percent="0.4" />
 
     <!-- Forgot password -->
     <TextView
