@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RequestQueue mRequestQueue;
     private StringRequest mStringRequest;
-    private String url = "https://fakestoreapi.com/products";
+    private String url = "https://68940f7fbe3700414e11e379.mockapi.io/User";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
