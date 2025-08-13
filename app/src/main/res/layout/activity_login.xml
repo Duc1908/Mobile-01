@@ -9,44 +9,45 @@
     tools:context=".LoginActivity"
     android:background="#FFFFFF">
 
-    <!-- Ảnh ổ khoá -->
+    <!-- Logo -->
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="60dp"
-        android:src="@android:drawable/ic_lock_lock"
-        android:contentDescription="Lock Icon"
+        android:id="@+id/imageView2"
+        android:layout_width="160dp"
+        android:layout_height="168dp"
+        android:contentDescription="@string/app_name"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@drawable/logozz" />
 
     <!-- Email -->
     <EditText
         android:id="@+id/txtEmail"
-        android:textColor="#000000"
-        android:textColorHint="#888888"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#000000"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:backgroundTint="#000000"
-        app:layout_constraintTop_toBottomOf="@id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#000000"
+        android:textColorHint="#888888"
+        app:layout_constraintTop_toBottomOf="@id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent="0.8" />
+
     <!-- Password -->
     <EditText
         android:id="@+id/txtPass"
-        android:textColor="#000000"
-        android:textColorHint="#888888"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
+        android:backgroundTint="#000000"
         android:hint="Password"
         android:inputType="textPassword"
-        android:backgroundTint="#000000"
+        android:textColor="#000000"
+        android:textColorHint="#888888"
         app:layout_constraintTop_toBottomOf="@id/txtEmail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
