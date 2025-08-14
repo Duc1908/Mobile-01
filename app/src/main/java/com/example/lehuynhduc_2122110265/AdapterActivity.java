@@ -4,60 +4,70 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Locale;
 
-import java.util.List;
+public class AdapterActivity extends BaseAdapter {
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ProductViewHolder> {
     private Context context;
-    private List<Product> productList;
+    private ArrayList<Product> productList;
+    private LayoutInflater inflater;
 
-    public Adapter(Context context, List<Product> productList) {
+    public AdapterActivity(Context context, ArrayList<Product> productList) {
         this.context = context;
         this.productList = productList;
-    }
-
-    @NonNull
-    @Override
-    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item, parent, false);
-        return new ProductViewHolder(view);
+        this.inflater = LayoutInflater.from(context);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
-        Product product = productList.get(position);
-        holder.imgProduct.setImageResource(product.getImageResId());
-        holder.tvName.setText(product.getName());
-        holder.tvPrice.setText(product.getPrice());
-
-        holder.btnAddToCart.setOnClickListener(v -> {
-            Toast.makeText(context, "Đã thêm " + product.getName() + " vào giỏ", Toast.LENGTH_SHORT).show();
-        });
-    }
-
-    @Override
-    public int getItemCount() {
+    public int getCount() {
         return productList.size();
     }
 
-    public static class ProductViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public Object getItem(int position) {
+        return productList.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+
+        if (convertView == null) {
+            convertView = inflater.inflate(R.layout.item, parent, false);
+            holder = new ViewHolder();
+            holder.imgProduct = convertView.findViewById(R.id.imgProduct);
+            holder.tvName = convertView.findViewById(R.id.tvName);
+            holder.tvPrice = convertView.findViewById(R.id.tvPrice);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
+
+        // Lấy dữ liệu
+        Product product = productList.get(position);
+        holder.imgProduct.setImageResource(product.getImage());
+        holder.tvName.setText(product.getName());
+
+        // Format giá sang VND
+        String priceFormatted = NumberFormat.getCurrencyInstance(new Locale("vi", "VN")).format(product.getPrice());
+        holder.tvPrice.setText(priceFormatted);
+
+        return convertView;
+    }
+
+    static class ViewHolder {
         ImageView imgProduct;
         TextView tvName, tvPrice;
-        Button btnAddToCart;
-
-        public ProductViewHolder(@NonNull View itemView) {
-            super(itemView);
-            imgProduct = itemView.findViewById(R.id.imgProduct);
-            tvName = itemView.findViewById(R.id.tvProductName);
-            tvPrice = itemView.findViewById(R.id.tvProductPrice);
-            btnAddToCart = itemView.findViewById(R.id.btnAddToCart);
-        }
     }
 }

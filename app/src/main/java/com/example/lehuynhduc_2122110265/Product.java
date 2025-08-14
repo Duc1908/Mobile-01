@@ -2,24 +2,24 @@ package com.example.lehuynhduc_2122110265;
 
 public class Product {
     private String name;
-    private double price;
-    private int imageResId; // ID hình ảnh trong drawable
+    private int price;
+    private int image;
 
-    public Product(String name, double price, int imageResId) {
+    public Product(String name, int price, int image) {
         this.name = name;
         this.price = price;
-        this.imageResId = imageResId;
+        this.image = image;
     }
 
     public String getName() {
         return name;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public int getImageResId() {
-        return imageResId;
+    public int getImage() {
+        return image;
     }
 }
