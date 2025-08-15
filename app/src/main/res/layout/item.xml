@@ -1,34 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:gravity="center"
     android:padding="8dp">
 
     <ImageView
         android:id="@+id/imgProduct"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_launcher_foreground" />
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/tvName"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tên sản phẩm"
-        android:textSize="16sp"
         android:textStyle="bold"
-        android:layout_marginTop="4dp"
-        android:gravity="center" />
+        android:textSize="14sp"
+        android:paddingTop="4dp"
+        android:textColor="#000000"/>
 
     <TextView
         android:id="@+id/tvPrice"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="100.000đ"
-        android:textSize="14sp"
-        android:textColor="#FF5722"
-        android:layout_marginTop="2dp"
-        android:gravity="center" />
+        android:text="50.000 đ"
+        android:textColor="#9C27B0"
+        android:textSize="13sp" />
+
+    <ImageButton
+        android:id="@+id/btnAddToCart"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_menu_add"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_gravity="end"
+        android:tint="#9C27B0" />
+
 </LinearLayout>

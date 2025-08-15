@@ -2,10 +2,10 @@ package com.example.lehuynhduc_2122110265;
 
 public class Product {
     private String name;
-    private int price;
-    private int image;
+    private String price;
+    private String image; // Đổi từ int sang String
 
-    public Product(String name, int price, int image) {
+    public Product(String name, String price, String image) {
         this.name = name;
         this.price = price;
         this.image = image;
@@ -15,11 +15,11 @@ public class Product {
         return name;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 }
